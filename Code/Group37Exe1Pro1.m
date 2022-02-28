@@ -1,3 +1,4 @@
+% Tzoulio Tzelilai - Nikos Tsibliaridis (9662-9652)
 clear;
 % Importing the Table
 Data = readtable('ECDC-7Days-Testing.xlsx');
@@ -5,13 +6,11 @@ Data = readtable('ECDC-7Days-Testing.xlsx');
 
 % Two arrays with maximum positive rate for 2021 and 2020 45th week.
 % Group37Exel1Pro2 takes Data and the week and returns the array
-max_pos_2021 = Group37Exe1Pro2(Data,'2021-W45');
-max_pos_2020 = Group37Exe1Pro2(Data,'2020-W45');
+max_pos_2021 = Group37Exe1Fun2(Data,'2021-W45');
+max_pos_2020 = Group37Exe1Fun2(Data,'2020-W45');
 
-% Creating the distribution from the data
-[p21,x21] = hist(max_pos_2021,size(max_pos_2021,1));
-[p20,x20] = hist(max_pos_2020,size(max_pos_2020,1));
 
+% Ploting 
 figure(1)
 h = histfit(max_pos_2021,size(max_pos_2021,1),'normal');
 hold on
